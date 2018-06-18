@@ -1,16 +1,10 @@
 package com.kjs.essenforkjs;
 import java.text.DecimalFormat;
-
 import net.md_5.bungee.api.ChatColor;
-
-//import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
-//import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-//import org.bukkit.event.entity.EntityDamageByEntityEvent;
-//import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 
 //엔티티 회복시 리스너
