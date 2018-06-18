@@ -16,14 +16,10 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class Listener1 implements Listener
 {
 
-	//@SuppressWarnings("deprecation")
 	public String drawbar(LivingEntity c, double dmg)
 	{
 		String tray = "";
-		//double nowhealth = c.getHealth();
 		double finalhealth = c.getHealth() - dmg;
-		
-		//double times = 0;
 		double times = Math.round(finalhealth / (c.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue()) * 10);
 		
 		if(times>6)
@@ -62,11 +58,10 @@ public class Listener1 implements Listener
 		return tray;
 		
 	}
-	//onEntityDamageByEntity, EntityDamageByEntityEvent
+	
     @EventHandler
     public void onEntityDamage(EntityDamageEvent ett)
     {
-    	//Entity from = ett.getDamager();
     	
     	if(!(ett.getEntity() instanceof LivingEntity))
     	{
@@ -81,24 +76,13 @@ public class Listener1 implements Listener
     		ett.getEntity().setCustomName("");
     		ett.getEntity().setCustomName(to.getName() + " [¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à] 0/" + to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
     		ett.getEntity().setCustomNameVisible(true);
-    		//from.sendMessage();
     		return;
     	}
     	
     	String finalhealth2 = drawbar(to, ett.getFinalDamage());
-    	//from.sendMessage(finalhealth2 + " " + (to.getHealth() - ett.getDamage()) + "/" + to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
     	ett.getEntity().setCustomName("");
 		ett.getEntity().setCustomName(to.getName() + " [" + finalhealth2 + "] " + df.format(to.getHealth() - ett.getFinalDamage()) + "/" + to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
 		ett.getEntity().setCustomNameVisible(true);
-		
-    	//from.sendMessage("");
-    	
-    	//String finalheal = drawbar((LivingEntity) to);
-    	
-    	//ett.getEntity().setCustomName("Touched");
-    	//ett.getEntity().setCustomNameVisible(true);
-    	
-    	//from.sendMessage("Å¸°Ù: " + to.getName() + ", " + "µ¥¹ÌÁö: " + ett.getDamage());
     }
     
 }

@@ -50,11 +50,6 @@ public class Command1 implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
-		
-		
-		//if(cmd.getName().equalsIgnoreCase("reinf")) //reinf라는 명령어를 받으면...
-		//{
-			
 			
 	    if (player.getInventory().getItemInMainHand().getType() == Material.DIAMOND_SWORD) //다이아몬드 칼을 오른손에 쥐고 있는지 체크
 	   {
@@ -89,20 +84,6 @@ public class Command1 implements CommandExecutor {
 	    else{ //만약 다이아몬드 검을 오른손에 쥐고 있지 않다면...
 	    	 player.sendMessage("손에 다이아몬드 검을 들고 다시 시도해주세요."); //메시지와 함께 함수 탈출
 	    }
-	    
-	    //}
-		
-		//
-		//
-		//
-		//
-		//
-		//
-		//
-		//
-		//
-		//
-		//
 		
 	return true;
     }
