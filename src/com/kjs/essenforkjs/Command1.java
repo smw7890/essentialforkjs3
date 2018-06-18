@@ -7,7 +7,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-//다이아검 강화 커맨드 리스너
+//강화 커맨드 1 리스너
 
 public class Command1 implements CommandExecutor {
 	

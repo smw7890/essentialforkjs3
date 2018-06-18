@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 //import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-//데미지 알림 이벤트 리스너
+//엔티티 피격시 리스너
 
 public class Listener1 implements Listener
 {
