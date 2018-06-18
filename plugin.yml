@@ -1,0 +1,7 @@
+name: Essenmain
+main: com.kjs.essenforkjs.Essenmain
+version: 1.0
+commands:
+   reinf:
+      description: asdf777
+      usage: /reinf
