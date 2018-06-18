@@ -20,10 +20,7 @@ public class Listener2 implements Listener {
 	public String revdrawbar(LivingEntity g, double dmg2)
 	{
 		String tray = "";
-		//double nowhealth = c.getHealth();
 		double finalhealth = g.getHealth() + dmg2;
-		
-		//double times = 0;
 		double times = Math.round(finalhealth / (g.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue()) * 10);
 		
 		if(times>6)
@@ -66,14 +63,11 @@ public class Listener2 implements Listener {
 	@EventHandler
 	public void onEntityRegainHealth(EntityRegainHealthEvent ett)
     {
-    	//Entity from = ett.getDamager();
 		
     	LivingEntity to = (LivingEntity) ett.getEntity();
     	DecimalFormat df = new DecimalFormat("0.#");
-    	//DecimalFormat df2 = new DecimalFormat("0");
     	
     	String finalhealth2 = revdrawbar(to, ett.getAmount());
-    	//from.sendMessage(finalhealth2 + " " + (to.getHealth() - ett.getDamage()) + "/" + to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
     	ett.getEntity().setCustomName("");
     	
     	if(to.getHealth() + ett.getAmount() > to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue())
@@ -85,8 +79,6 @@ public class Listener2 implements Listener {
     	
 		ett.getEntity().setCustomName(to.getName() + " [" + finalhealth2 + "] " + df.format(to.getHealth() + ett.getAmount()) + "/" + to.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
 		ett.getEntity().setCustomNameVisible(true);
-		
-		//Bukkit.broadcastMessage("asdf");
     }
 
 }
